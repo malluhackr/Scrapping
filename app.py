@@ -81,7 +81,7 @@ async def scrape_video_details(url: str = Query(..., description="The URL of the
         await page.goto(url, timeout=60000, wait_until="domcontentloaded")
 
         # JavaScript ലോഡ് ആകാനും നെറ്റ്‌വർക്ക് കോളുകൾ വരാനും 10 സെക്കൻഡ് കാത്തിരിക്കുന്നു
-        await page.wait_for_timeout(10000)
+        await page.wait_for_timeout(15000)
         
         # പേജിന്റെ തലക്കെട്ട് (Title) എടുക്കുന്നു
         title = await page.title()
