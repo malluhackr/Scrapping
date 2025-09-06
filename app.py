@@ -196,14 +196,13 @@ async def advanced_playwright_scraper(page_url: str):
 # To add a new website, create a scraper function for it above,
 # then add the website's domain and the function's name to this dictionary.
 STRATEGY_MAP = {
-    # --- Direct/Fast Methods ---
-    "xvideos.com": scrape_xvideos_direct,
-    "xhamster.com": scrape_xhamster_direct,
-    # "mixkit.co": scrape_mixkit_direct, # You can add the previous Mixkit function here
+    "mixkit.co": scrape_mixkit_direct,
     
-    # --- Playwright/Complex Methods ---
+    # XVideos-നെ ബ്ലോക്ക് ചെയ്യുന്നതുകൊണ്ട്, അതിന് Playwright ഉപയോഗിക്കാൻ പറയുന്നു
+    "xvideos.com": advanced_playwright_scraper,
+    
     "pixabay.com": advanced_playwright_scraper,
-    # "another_complex_site.com": advanced_playwright_scraper,
+    "xhamster.com": scrape_xhamster_direct,
 }
 
 
